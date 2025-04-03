@@ -45,10 +45,6 @@ if selected == 'Home':
     - **Team** – In here you can have an inside look at our incredible and hard-working team that made all this possible.
     """)
     st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
-    st.markdown(f'<p style="font-size:25px; text-align:left;font-weight:bold;">What are you waiting for?</p>', unsafe_allow_html=True)
-    st.markdown(f'<p style="font-size:25px; text-align:left; ">Start your experience here!</p>', unsafe_allow_html=True)
-    if st.button("LET'S GO!"):
-        selected='Chat with me'
     st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
 
     cola,colb,colc=st.columns(3)
