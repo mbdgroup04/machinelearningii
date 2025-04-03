@@ -3,7 +3,6 @@ from PIL import Image
 import streamlit as st
 from streamlit_option_menu import option_menu
 from gemini_utility import (load_gemini_pro_model, gemini_pro_response, gemini_pro_vision_response, embeddings_model_response)
-import google.generativeai as genai
 
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -24,6 +23,8 @@ def translate_role_for_streamlit(user_role):
     else:
         return user_role
 
+
+# chatbot page
 if selected == 'Home':
 
     col1,col2,col3=st.columns(3)
@@ -62,8 +63,7 @@ if selected == 'Home':
 
 # chatbot page
 if selected == 'Chat with me':
-    genai.configure(api_key='AIzaSyC7PQIrRQbjbf-EKZcTIm3zTM9gHipMsuM')
-    model = genai.GenerativeModel("gemini-1.5-pro")
+    model = load_gemini_pro_model()
 
     if "chat_session" not in st.session_state:
         st.session_state.chat_session = model.start_chat(history=[])
