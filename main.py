@@ -1,32 +1,19 @@
 import os
-
 from PIL import Image
 import streamlit as st
 from streamlit_option_menu import option_menu
-
-from gemini_utility import (load_gemini_pro_model,
-                            gemini_pro_response,
-                            gemini_pro_vision_response,
-                            embeddings_model_response)
-
+from gemini_utility import (load_gemini_pro_model, gemini_pro_response, gemini_pro_vision_response, embeddings_model_response)
 
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(
-    page_title="Gemini AI",
-    page_icon="🧠",
+    page_title="The Birder AI",
+    page_icon=":bird:",
     layout="centered",
 )
 
 with st.sidebar:
-    selected = option_menu('Gemini AI',
-                           ['ChatBot',
-                            'Image Captioning',
-                            'Embed text',
-                            'Ask me anything'],
-                           menu_icon='robot', icons=['chat-dots-fill', 'image-fill', 'textarea-t', 'patch-question-fill'],
-                           default_index=0
-                           )
+    selected = option_menu('The Birder AI',['Chat with me','Send me an image',],menu_icon='bird', icons=['chat-dots-fill', 'image-fill'],default_index=0)
 
 
 # Function to translate roles between Gemini-Pro and Streamlit terminology
